@@ -1,4 +1,9 @@
 alert ("Play game two player !👍");
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+    .then(() => console.log("Offline App Ready!"))
+    .catch((err) => console.log("Error:", err));
+}
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset-btn");
 let newGameBtn = document.querySelector("#new-btn");
